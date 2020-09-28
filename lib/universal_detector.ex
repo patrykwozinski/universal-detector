@@ -3,7 +3,9 @@ defmodule UniversalDetector do
   Detector helps to define encoding of the given data
   """
 
-  def feed(byte_str) do
-    "UTF-8"
+  @encoding_not_found "none"
+
+  def feed() do
+    @encoding_not_found
   end
 end
