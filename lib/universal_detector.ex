@@ -15,4 +15,8 @@ defmodule UniversalDetector do
   def hello do
     :world
   end
+
+  def feed(byte_str) do
+    "UTF-8"
+  end
 end
