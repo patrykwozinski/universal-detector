@@ -8,4 +8,9 @@ defmodule UniversalDetector do
   def feed() do
     @encoding_not_found
   end
+
+  def feed(byte_str) do
+    byte_str
+    |> String.starts_with?()
+  end
 end
