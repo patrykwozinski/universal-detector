@@ -5,9 +5,9 @@ defmodule UniversalDetectorTest do
     assert UniversalDetector.feed() == "none"
   end
 
-  test "step next" do
+  test "utf8 detected" do
     res = File.read!("test/fixtures/utf8.csv")
 
-    UniversalDetector.feed(res)
+    assert UniversalDetector.feed(res) == "utf8"
   end
 end
