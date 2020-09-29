@@ -1,5 +1,6 @@
 defmodule UniversalDetector do
   alias UniversalDetector.BOM
+
   @moduledoc """
   Detector helps to define encoding of the given data
   """
@@ -11,7 +12,10 @@ defmodule UniversalDetector do
   end
 
   def feed(byte_str) do
-    byte_str
-    |> BOM.is_utf8()
+    cond do
+      BOM.is_utf8(byte_str) -> "utf8"
+      BOM.is_utf16(byte_str) -> "utf16"
+      BOM.is_utf32(byte_str) -> "utf32"
+    end
   end
 end
