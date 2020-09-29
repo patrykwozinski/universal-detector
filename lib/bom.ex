@@ -21,15 +21,15 @@ defmodule UniversalDetector.BOM do
   end
 
   def is_utf32(string) do
-    unicode = string |> String.first()
+    unicode = string |> get_n_bytes(4)
 
     unicode == @utf32_le or unicode == @utf32_be
   end
 
   defp get_n_bytes(string, n) do
     string
-      |> String.graphemes()
-      |> Enum.take(n)
-      |> Enum.join()
+    |> String.graphemes()
+    |> Enum.take(n)
+    |> Enum.join()
   end
 end
