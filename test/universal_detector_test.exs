@@ -23,6 +23,12 @@ defmodule UniversalDetectorTest do
     assert UniversalDetector.feed(res) == "utf32"
   end
 
+  test "unknown" do
+    res = load_fixture("unknown.csv")
+
+    UniversalDetector.feed(res) |> IO.inspect()
+  end
+
   defp load_fixture(name) do
     File.read!("test/fixtures/" <> name)
   end
