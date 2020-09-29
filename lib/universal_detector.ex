@@ -16,6 +16,7 @@ defmodule UniversalDetector do
       BOM.is_utf8(byte_str) -> "utf8"
       BOM.is_utf16(byte_str) -> "utf16"
       BOM.is_utf32(byte_str) -> "utf32"
+      true -> @encoding_not_found
     end
   end
 end
