@@ -22,6 +22,7 @@ defmodule UniversalDetector.BOM do
 
   def is_utf32(string) do
     unicode = string |> String.first()
-    unicode == @utf32_be
+
+    unicode == @utf32_le or unicode == @utf32_be
   end
 end
